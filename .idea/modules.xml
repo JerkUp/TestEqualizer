@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TestEqualizer.iml" filepath="$PROJECT_DIR$/TestEqualizer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/equalizer/equalizer.iml" filepath="$PROJECT_DIR$/equalizer/equalizer.iml" />
     </modules>
   </component>
 </project>
