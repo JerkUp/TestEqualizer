@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mediaPlayer = MediaPlayer.create(this, R.raw.lenka);
+        mediaPlayer = MediaPlayer.create(this, R.raw.top_rock);
         int sessionId = mediaPlayer.getAudioSessionId();
         mediaPlayer.setLooping(true);
         EqualizerFragment equalizerFragment = EqualizerFragment.newBuilder()
@@ -65,9 +65,12 @@ public class MainActivity extends AppCompatActivity {
             Uri mAudioUri = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
             String selection = MediaStore.Audio.Media.TITLE + " == \"" + intent.getStringExtra("track") + "\"";
             String[] STAR = {"*"};
+
             Cursor cursor = getContentResolver().query(mAudioUri, STAR, selection, null, null);
+
             if (cursor != null && cursor.getCount() > 0) {
                 cursor.moveToFirst();
+
                 if (cursor.getColumnIndex(MediaStore.Audio.Media.TITLE) != -1) {
                     String fullpath = cursor.getString(cursor
                             .getColumnIndex(MediaStore.Audio.Media.DATA));
